@@ -7,8 +7,23 @@ import { Menu } from "./components/Menu";
 import { CountDown } from "./components/CountDown";
 import { DefaultInput } from "./components/DefaultInput";
 import { Cycles } from "./components/Cycles";
+import { DefaultButton } from "./components/DefaultButton";
+import { PlayCircleIcon } from "lucide-react";
+import { Footer } from "./components/Footer";
 
 export function App() {
+  //SEMPRE QUE USAR USESTAT NAO ATRIBUIR VALOR DIRETAMENTE
+  // const [numero, setNumero] = useState(() => {
+  //   console.log("Lazy initialization");
+  //   return 0;
+  // });
+
+  // const [numero, setNumero] = useState(0);
+
+  // function handleClick() {
+  //   // setNumero((prevState) => prevState + 1);
+  //   setNumero(numero + 1);
+  // }
   return (
     <>
       <Container>
@@ -41,9 +56,13 @@ export function App() {
             <Cycles />
           </div>
           <div className="formRow">
-            <button>Enviar</button>
+            <DefaultButton icon={<PlayCircleIcon />} color="green" />
           </div>
         </form>
+      </Container>
+
+      <Container>
+        <Footer />
       </Container>
     </>
   );
